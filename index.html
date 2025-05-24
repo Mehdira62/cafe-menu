@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>منوی کافه بازی</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      direction: rtl;
+      background-color: #f4f1ee;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #3e2f25;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 1000px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    .menu-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      color: #3e2f25;
+      border-bottom: 2px solid #d9d3cd;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .item-card {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease;
+    }
+
+    .item-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .item-name {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #3e2f25;
+    }
+
+    .item-price {
+      color: #888;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .quantity-input {
+      width: 60px;
+      padding: 0.3rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .submit-btn {
+      background-color: #3e2f25;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #5a4539;
+    }
+
+    @media (max-width: 600px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quantity-input {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>منوی کافه بازی</header>
+  <main>
+    <form id="orderForm">
+      <!-- نوشیدنی‌های گرم -->
+      <div class="menu-section">
+        <div class="section-title">نوشیدنی‌های گرم</div>
+        <div class="menu-grid">
+          <div class="item-card">
+            <span class="item-name">قهوه اسپرسو</span>
+            <span class="item-price">40,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="قهوه اسپرسو" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">لاته</span>
+            <span class="item-price">70,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="لاته" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">امریکانو</span>
+            <span class="item-price">45,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="امریکانو" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">کاپوچینو</span>
+            <span class="item-price">70,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="کاپوچینو" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">موکا</span>
+            <span class="item-price">90,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="موکا" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">فرانسه</span>
+            <span class="item-price">60,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="فرانسه" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">فدرال</span>
+            <span class="item-price">80,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="فدرال" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">ترک</span>
+            <span class="item-price">50,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="ترک" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">کارامل ماکیاتو</span>
+            <span class="item-price">80,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="کارامل ماکیاتو" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">هات چاکلت</span>
+            <span class="item-price">70,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="هات چاکلت" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">شیر نسکافه</span>
+            <span class="item-price">65,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="شیر نسکافه" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">شیر کاکائو</span>
+            <span class="item-price">60,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="شیر کاکائو" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">چای</span>
+            <span class="item-price">35,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="چای" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">دمنوش</span>
+            <span class="item-price">40,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="دمنوش" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">ماسالا</span>
+            <span class="item-price">60,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="ماسالا" />
+          </div>
+        </div>
+      </div>
+
+      <!-- نوشیدنی‌های سرد -->
+      <div class="menu-section">
+        <div class="section-title">نوشیدنی‌های سرد</div>
+        <div class="menu-grid">
+          <div class="item-card">
+            <span class="item-name">آیس لاته</span>
+            <span class="item-price">70,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="آیس لاته" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">آیس کارامل</span>
+            <span class="item-price">85,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="آیس کارامل" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">لیموناد کافی</span>
+            <span class="item-price">75,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="لیموناد کافی" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">موهیتو</span>
+            <span class="item-price">110,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="موهیتو" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">آفوگاتو</span>
+            <span class="item-price">70,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="آفوگاتو" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">آیس بنانا کافی</span>
+            <span class="item-price">130,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="آیس بنانا کافی" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">شیک شکلات</span>
+            <span class="item-price">120,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="شیک شکلات" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">شیک قهوه</span>
+            <span class="item-price">130,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="شیک قهوه" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">شیک نسکافه</span>
+            <span class="item-price">130,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="شیک نسکافه" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">شیک انبه</span>
+            <span class="item-price">140,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="شیک انبه" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">لیموناد</span>
+            <span class="item-price">32,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="لیموناد" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">انرژی زا</span>
+            <span class="item-price">40,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="انرژی زا" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">شیک موز</span>
+            <span class="item-price">120,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="شیک موز" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">شیک کیوی</span>
+            <span class="item-price">120,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="شیک کیوی" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">آب معدنی</span>
+            <span class="item-price">15,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="آب معدنی" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">دلستر</span>
+            <span class="item-price">20,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="دلستر" />
+          </div>
+        </div>
+      </div>
+
+      <!-- خوراکی‌ها -->
+      <div class="menu-section">
+        <div class="section-title">خوراکی‌ها</div>
+        <div class="menu-grid">
+          <div class="item-card">
+            <span class="item-name">کرپ</span>
+            <span class="item-price">85,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="کرپ" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">پنکیک</span>
+            <span class="item-price">85,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="پنکیک" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">وافل</span>
+            <span class="item-price">90,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="وافل" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">پنیر کیک</span>
+            <span class="item-price">75,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="پنیر کیک" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">کیک صبحانه</span>
+            <span class="item-price">80,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="کیک صبحانه" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">کیک شکلاتی</span>
+            <span class="item-price">90,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="کیک شکلاتی" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">کیک وانیلی</span>
+            <span class="item-price">90,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="کیک وانیلی" />
+          </div>
+          <div class="item-card">
+            <span class="item-name">موس شکلاتی</span>
+            <span class="item-price">100,000 تومان</span>
+            <input type="number" min="0" value="0" class="quantity-input" name="موس شکلاتی" />
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">ارسال سفارش از طریق واتساپ</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const inputs = this.querySelectorAll('input[type="number"]');
+      let orderItems = [];
+      inputs.forEach(input => {
+        const quantity = parseInt(input.value);
+        if (quantity > 0) {
+          orderItems.push(`${input.name} (${quantity})`);
+        }
+      });
+      if (orderItems.length === 0) {
+        alert('لطفاً حداقل یک محصول را انتخاب کنید.');
+        return;
+      }
+      const message = `سلام سفارش من/ما: ${orderItems.join('، ')}`;
+      // شماره واتساپ صحیح به فرمت بین‌المللی
+      const phone = '989133432850'; 
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
